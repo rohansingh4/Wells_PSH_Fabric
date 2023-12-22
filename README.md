@@ -45,3 +45,10 @@ fabric:
     orderer:
       FABRIC_LOGGING_SPEC: DEBUG
 
+
+1. cryto-config.yaml
+2. configtx.yaml
+3. create-artifacts.sh
+4. docker-compose.yaml
+5. createChannel.sh
+
