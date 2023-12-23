@@ -1,3 +1,88 @@
+# OrdererOrgs:
+#   - Name: Orderer
+#     Domain: hiam.hal
+#     EnableNodeOUs: true
+#     Specs:
+#       - Hostname: orderer1
+#         SANS:
+#           - "localhost"
+#           - "127.0.0.1"
+#       - Hostname: orderer2
+#         SANS:
+#           - "localhost"
+#           - "127.0.0.1"
+#       - Hostname: orderer3
+#         SANS:
+#           - "localhost"
+#           - "127.0.0.1"
+
+# PeerOrgs:
+# #org0 = Wells PSH Company
+#   - Name: org0   
+#     Domain: org0.hiam.hal
+#     EnableNodeOUs: true
+#     Template:
+#       Count: 2
+#       SANS:
+#         - "localhost"
+#     Users:
+#       Count: 1
+
+# #org1 = Investor Company
+#   - Name: org1  
+#     Domain: org1.hiam.hal
+#     EnableNodeOUs: true
+#     Template:
+#       Count: 2
+#       SANS:
+#         - "localhost"
+#     Users:
+#       Count: 1
+
+# #org2 = Asset/Service Owner (SC Partners)
+#   - Name: org2  
+#     Domain: org2.hiam.hal
+#     EnableNodeOUs: true
+#     Template:
+#       Count: 2
+#       SANS:
+#         - "localhost"
+#     Users:
+#       Count: 1
+
+# #org3 = PSH Electric Customer
+#   - Name: org3  
+#     Domain: org3.hiam.hal
+#     EnableNodeOUs: true
+#     Template:
+#       Count: 2
+#       SANS:
+#         - "localhost"
+#     Users:
+#       Count: 1
+
+# #org4 = Banks/Payment Company (Token to $$)
+#   - Name: org4  
+#     Domain: org4.hiam.hal
+#     EnableNodeOUs: true
+#     Template:
+#       Count: 2
+#       SANS:
+#         - "localhost"
+#     Users:
+#       Count: 1
+
+# #org5 = Auditor/Regulator (CO2)
+#   - Name: org5  
+#     Domain: org5.hiam.hal
+#     EnableNodeOUs: true
+#     Template:
+#       Count: 2
+#       SANS:
+#         - "localhost"
+#     Users:
+#       Count: 1
+
 OrdererOrgs:
   - Name: Orderer
     Domain: hiam.hal
@@ -17,69 +102,50 @@ OrdererOrgs:
           - "127.0.0.1"
 
 PeerOrgs:
-#org0 = Wells PSH Company
   - Name: org0   
     Domain: org0.hiam.hal
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "localhost"
     Users:
       Count: 1
 
-#org1 = Investor Company
   - Name: org1  
     Domain: org1.hiam.hal
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "localhost"
     Users:
       Count: 1
 
-#org2 = Asset/Service Owner (SC Partners)
   - Name: org2  
     Domain: org2.hiam.hal
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "localhost"
     Users:
       Count: 1
 
-#org3 = PSH Electric Customer
   - Name: org3  
     Domain: org3.hiam.hal
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "localhost"
     Users:
       Count: 1
 
-#org4 = Banks/Payment Company (Token to $$)
   - Name: org4  
     Domain: org4.hiam.hal
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "localhost"
     Users:
       Count: 1
 
-#org5 = Auditor/Regulator (CO2)
   - Name: org5  
     Domain: org5.hiam.hal
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "localhost"
     Users:
       Count: 1
-
