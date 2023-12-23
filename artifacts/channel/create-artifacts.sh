@@ -14,34 +14,34 @@ cryptogen generate --config=./crypto-config.yaml --output=./crypto-config/
 SYS_CHANNEL="sys-channel"
 
 #channel name defaults to "mychannel"
-CHANNEL_NAME="mychannel"
+# CHANNEL_NAME="mychannel"
 
-echo $CHANNEL_NAME
+# echo $CHANNEL_NAME
 
 # Generate System Genesis block
 configtxgen -profile OrdererGenesis -configPath . -channelID $SYS_CHANNEL  -outputBlock ./genesis.block
 
 
-# Generate channel configuration block
-configtxgen -profile BasicChannel -configPath . -outputCreateChannelTx ./mychannel.tx -channelID $CHANNEL_NAME
+# # Generate channel configuration block
+# configtxgen -profile BasicChannel -configPath . -outputCreateChannelTx ./mychannel.tx -channelID $CHANNEL_NAME
 
-echo "#######    Generating anchor peer update for org0MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org0MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org0MSP
+# echo "#######    Generating anchor peer update for org0MSP  ##########"
+# configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org0MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org0MSP
 
-echo "#######    Generating anchor peer update for org1MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org1MSP
+# echo "#######    Generating anchor peer update for org1MSP  ##########"
+# configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org1MSP
 
-echo "#######    Generating anchor peer update for org2MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org2MSP
+# echo "#######    Generating anchor peer update for org2MSP  ##########"
+# configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org2MSP
 
-echo "#######    Generating anchor peer update for org3MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org3MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org3MSP
+# echo "#######    Generating anchor peer update for org3MSP  ##########"
+# configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org3MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org3MSP
 
-echo "#######    Generating anchor peer update for org4MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org4MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org4MSP
+# echo "#######    Generating anchor peer update for org4MSP  ##########"
+# configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org4MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org4MSP
 
-echo "#######    Generating anchor peer update for org5MSP  ##########"
-configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org5MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org5MSP
+# echo "#######    Generating anchor peer update for org5MSP  ##########"
+# configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./org5MSPanchors.tx -channelID $CHANNEL_NAME -asOrg org5MSP
 
 
 # channel name defaults to "channel1"
@@ -85,7 +85,7 @@ echo "#######    Generating anchor peer update for org2MSP  ##########"
 configtxgen -profile channel2 -configPath . -outputAnchorPeersUpdate ./org2MSPanchors_$CHANNEL_NAME2.tx -channelID $CHANNEL_NAME2 -asOrg org2MSP
 
 echo "#######    Generating anchor peer update for org3MSP  ##########"
-configtxgen -profile channel2 -configPath . -outputAnchorPeersUpdate ./org2MSPanchors_$CHANNEL_NAME2.tx -channelID $CHANNEL_NAME2 -asOrg org3MSP
+configtxgen -profile channel2 -configPath . -outputAnchorPeersUpdate ./org3MSPanchors_$CHANNEL_NAME2.tx -channelID $CHANNEL_NAME2 -asOrg org3MSP
 
 echo "#######    Generating anchor peer update for org5MSP  ##########"
-configtxgen -profile channel2 -configPath . -outputAnchorPeersUpdate ./org4MSPanchors_$CHANNEL_NAME2.tx -channelID $CHANNEL_NAME2 -asOrg org5MSP
+configtxgen -profile channel2 -configPath . -outputAnchorPeersUpdate ./org5MSPanchors_$CHANNEL_NAME2.tx -channelID $CHANNEL_NAME2 -asOrg org5MSP
