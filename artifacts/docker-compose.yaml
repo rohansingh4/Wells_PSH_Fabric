@@ -9,20 +9,20 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org0.example.com
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org0.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_NAME=ca.org0.hiam.hal
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org0.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org0.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org0.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org0.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./channel/crypto-config/peerOrganizations/org0.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-    container_name: ca.org0.example.com
-    hostname: ca.org0.example.com
+      - ./channel/crypto-config/peerOrganizations/org0.hiam.hal/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./channel/crypto-config/peerOrganizations/org0.hiam.hal/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+    container_name: ca.org0.hiam.hal
+    hostname: ca.org0.hiam.hal
     networks:
       - test
 
@@ -31,20 +31,20 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org1.example.com
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_NAME=ca.org1.hiam.hal
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org1.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org1.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
     ports:
       - "8054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-    container_name: ca.org1.example.com
-    hostname: ca.org1.example.com
+      - ./channel/crypto-config/peerOrganizations/org1.hiam.hal/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./channel/crypto-config/peerOrganizations/org1.hiam.hal/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+    container_name: ca.org1.hiam.hal
+    hostname: ca.org1.hiam.hal
     networks:
       - test
 
@@ -54,20 +54,20 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org2.example.com
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_NAME=ca.org2.hiam.hal
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org2.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org2.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
     ports:
       - "9054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-    container_name: ca.org2.example.com
-    hostname: ca.org2.example.com
+      - ./channel/crypto-config/peerOrganizations/org2.hiam.hal/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./channel/crypto-config/peerOrganizations/org2.hiam.hal/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+    container_name: ca.org2.hiam.hal
+    hostname: ca.org2.hiam.hal
     networks:
       - test
 
@@ -76,20 +76,20 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org3.example.com
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_NAME=ca.org3.hiam.hal
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org3.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org3.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
     ports:
       - "10054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-    container_name: ca.org3.example.com
-    hostname: ca.org3.example.com
+      - ./channel/crypto-config/peerOrganizations/org3.hiam.hal/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./channel/crypto-config/peerOrganizations/org3.hiam.hal/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+    container_name: ca.org3.hiam.hal
+    hostname: ca.org3.hiam.hal
     networks:
       - test
 
@@ -98,20 +98,20 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org4.example.com
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_NAME=ca.org4.hiam.hal
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org4.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org4.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
     ports:
       - "11054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-    container_name: ca.org4.example.com
-    hostname: ca.org4.example.com
+      - ./channel/crypto-config/peerOrganizations/org4.hiam.hal/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./channel/crypto-config/peerOrganizations/org4.hiam.hal/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+    container_name: ca.org4.hiam.hal
+    hostname: ca.org4.hiam.hal
     networks:
       - test
 
@@ -120,25 +120,25 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=DEBUG
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.org5.example.com
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org5.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_NAME=ca.org5.hiam.hal
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org5.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org5.example.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-tls/tlsca.org5.hiam.hal-cert.pem
       - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-tls/priv_sk
     ports:
       - "12054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/tlsca/:/etc/hyperledger/fabric-ca-server-tls
-    container_name: ca.org5.example.com
-    hostname: ca.org5.example.com
+      - ./channel/crypto-config/peerOrganizations/org5.hiam.hal/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./channel/crypto-config/peerOrganizations/org5.hiam.hal/tlsca/:/etc/hyperledger/fabric-ca-server-tls
+    container_name: ca.org5.hiam.hal
+    hostname: ca.org5.hiam.hal
     networks:
       - test
 
-  orderer1.example.com:
-    container_name: orderer1.example.com
+  orderer1.hiam.hal:
+    container_name: orderer1.hiam.hal
     image: hyperledger/fabric-orderer:2.1
     dns_search: .
     environment:
@@ -169,11 +169,11 @@ services:
       - test
     volumes:
       - ./channel/genesis.block:/var/hyperledger/orderer/genesis.block
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/msp:/var/hyperledger/orderer/msp
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/tls:/var/hyperledger/orderer/tls
+      - ./channel/crypto-config/ordererOrganizations/hiam.hal/orderers/orderer1.hiam.hal/msp:/var/hyperledger/orderer/msp
+      - ./channel/crypto-config/ordererOrganizations/hiam.hal/orderers/orderer1.hiam.hal/tls:/var/hyperledger/orderer/tls
 
-  orderer2.example.com:
-    container_name: orderer2.example.com
+  orderer2.hiam.hal:
+    container_name: orderer2.hiam.hal
     image: hyperledger/fabric-orderer:2.1
     dns_search: .
     environment:
@@ -204,11 +204,11 @@ services:
       - test
     volumes:
       - ./channel/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/msp:/var/hyperledger/orderer/msp
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls:/var/hyperledger/orderer/tls
+      - ./channel/crypto-config/ordererOrganizations/hiam.hal/orderers/orderer2.hiam.hal/msp:/var/hyperledger/orderer/msp
+      - ./channel/crypto-config/ordererOrganizations/hiam.hal/orderers/orderer2.hiam.hal/tls:/var/hyperledger/orderer/tls
 
-  orderer3.example.com:
-    container_name: orderer3.example.com
+  orderer3.hiam.hal:
+    container_name: orderer3.hiam.hal
     image: hyperledger/fabric-orderer:2.1
     dns_search: .
     environment:
@@ -239,8 +239,8 @@ services:
       - test
     volumes:
       - ./channel/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/msp:/var/hyperledger/orderer/msp
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls:/var/hyperledger/orderer/tls
+      - ./channel/crypto-config/ordererOrganizations/hiam.hal/orderers/orderer3.hiam.hal/msp:/var/hyperledger/orderer/msp
+      - ./channel/crypto-config/ordererOrganizations/hiam.hal/orderers/orderer3.hiam.hal/tls:/var/hyperledger/orderer/tls
 
   couchdb0:
     container_name: couchdb0
@@ -374,8 +374,8 @@ services:
     networks:
       - test
 
-  peer0.org0.example.com:
-    container_name: peer0.org0.example.com
+  peer0.org0.hiam.hal:
+    container_name: peer0.org0.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -386,15 +386,15 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org0.example.com
-      - CORE_PEER_ADDRESS=peer0.org0.example.com:7051
+      - CORE_PEER_ID=peer0.org0.hiam.hal
+      - CORE_PEER_ADDRESS=peer0.org0.hiam.hal:7051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org0.example.com:7052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org0.hiam.hal:7052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
       # Peer used to bootstrap gossip within organisation
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org0.example.com:8051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org0.hiam.hal:8051
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org0.example.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org0.hiam.hal:7051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -413,15 +413,15 @@ services:
     ports:
       - 7051:7051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org0.example.com/peers/peer0.org0.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org0.example.com/peers/peer0.org0.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org0.hiam.hal/peers/peer0.org0.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org0.hiam.hal/peers/peer0.org0.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org0.example.com:
-    container_name: peer1.org0.example.com
+  peer1.org0.hiam.hal:
+    container_name: peer1.org0.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -432,14 +432,14 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org0.example.com
-      - CORE_PEER_ADDRESS=peer1.org0.example.com:8051
+      - CORE_PEER_ID=peer1.org0.hiam.hal
+      - CORE_PEER_ADDRESS=peer1.org0.hiam.hal:8051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org0.example.com:8052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org0.hiam.hal:8052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:8052
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org0.example.com:8051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org0.example.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org0.hiam.hal:8051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org0.hiam.hal:7051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
@@ -455,15 +455,15 @@ services:
     ports:
       - 8051:8051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org0.example.com/peers/peer1.org0.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org0.example.com/peers/peer1.org0.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org0.hiam.hal/peers/peer1.org0.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org0.hiam.hal/peers/peer1.org0.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer0.org1.example.com:
-    container_name: peer0.org1.example.com
+  peer0.org1.hiam.hal:
+    container_name: peer0.org1.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -474,15 +474,15 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org1.example.com
-      - CORE_PEER_ADDRESS=peer0.org1.example.com:9051
+      - CORE_PEER_ID=peer0.org1.hiam.hal
+      - CORE_PEER_ADDRESS=peer0.org1.hiam.hal:9051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:9051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org1.example.com:9052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org1.hiam.hal:9052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9052
       # Peer used to bootstrap gossip within organisation
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.example.com:10051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.hiam.hal:10051
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:9051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.hiam.hal:9051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -501,15 +501,15 @@ services:
     ports:
       - 9051:9051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org1.hiam.hal/peers/peer0.org1.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org1.hiam.hal/peers/peer0.org1.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org1.example.com:
-    container_name: peer1.org1.example.com
+  peer1.org1.hiam.hal:
+    container_name: peer1.org1.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -520,14 +520,14 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org1.example.com
-      - CORE_PEER_ADDRESS=peer1.org1.example.com:10051
+      - CORE_PEER_ID=peer1.org1.hiam.hal
+      - CORE_PEER_ADDRESS=peer1.org1.hiam.hal:10051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:10051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org1.example.com:10052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org1.hiam.hal:10052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:10052
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.example.com:10051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.example.com:9051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.hiam.hal:10051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.hiam.hal:9051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
@@ -543,15 +543,15 @@ services:
     ports:
       - 10051:10051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org1.hiam.hal/peers/peer1.org1.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org1.hiam.hal/peers/peer1.org1.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer0.org2.example.com:
-    container_name: peer0.org2.example.com
+  peer0.org2.hiam.hal:
+    container_name: peer0.org2.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -562,15 +562,15 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org2.example.com
-      - CORE_PEER_ADDRESS=peer0.org2.example.com:11051
+      - CORE_PEER_ID=peer0.org2.hiam.hal
+      - CORE_PEER_ADDRESS=peer0.org2.hiam.hal:11051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org2.example.com:11052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org2.hiam.hal:11052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11052
       # Peer used to bootstrap gossip within organisation
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org2.example.com:12051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org2.hiam.hal:12051
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org2.example.com:11051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org2.hiam.hal:11051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -589,15 +589,15 @@ services:
     ports:
       - 11051:11051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org2.hiam.hal/peers/peer0.org2.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org2.hiam.hal/peers/peer0.org2.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org2.example.com:
-    container_name: peer1.org2.example.com
+  peer1.org2.hiam.hal:
+    container_name: peer1.org2.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -608,14 +608,14 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org2.example.com
-      - CORE_PEER_ADDRESS=peer1.org2.example.com:12051
+      - CORE_PEER_ID=peer1.org2.hiam.hal
+      - CORE_PEER_ADDRESS=peer1.org2.hiam.hal:12051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:12051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org2.example.com:12052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org2.hiam.hal:12052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:12052
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.example.com:12051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org2.example.com:11051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.hiam.hal:12051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org2.hiam.hal:11051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:5984
@@ -631,15 +631,15 @@ services:
     ports:
       - 12051:12051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org2.hiam.hal/peers/peer1.org2.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org2.hiam.hal/peers/peer1.org2.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer0.org3.example.com:
-    container_name: peer0.org3.example.com
+  peer0.org3.hiam.hal:
+    container_name: peer0.org3.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -650,15 +650,15 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org3.example.com
-      - CORE_PEER_ADDRESS=peer0.org3.example.com:13051
+      - CORE_PEER_ID=peer0.org3.hiam.hal
+      - CORE_PEER_ADDRESS=peer0.org3.hiam.hal:13051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:13051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org3.example.com:13052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org3.hiam.hal:13052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:13052
       # Peer used to bootstrap gossip within organisation
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org3.example.com:14051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org3.hiam.hal:14051
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org3.example.com:13051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org3.hiam.hal:13051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -677,15 +677,15 @@ services:
     ports:
       - 13051:13051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org3.hiam.hal/peers/peer0.org3.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org3.hiam.hal/peers/peer0.org3.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org3.example.com:
-    container_name: peer1.org3.example.com
+  peer1.org3.hiam.hal:
+    container_name: peer1.org3.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -696,14 +696,14 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org3.example.com
-      - CORE_PEER_ADDRESS=peer1.org3.example.com:14051
+      - CORE_PEER_ID=peer1.org3.hiam.hal
+      - CORE_PEER_ADDRESS=peer1.org3.hiam.hal:14051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:14051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org3.example.com:14052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org3.hiam.hal:14052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:14052
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org3.example.com:14051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org3.example.com:13051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org3.hiam.hal:14051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org3.hiam.hal:13051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb7:5984
@@ -719,15 +719,15 @@ services:
     ports:
       - 14051:14051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org3.hiam.hal/peers/peer1.org3.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org3.hiam.hal/peers/peer1.org3.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer0.org4.example.com:
-    container_name: peer0.org4.example.com
+  peer0.org4.hiam.hal:
+    container_name: peer0.org4.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -738,15 +738,15 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org4.example.com
-      - CORE_PEER_ADDRESS=peer0.org4.example.com:15051
+      - CORE_PEER_ID=peer0.org4.hiam.hal
+      - CORE_PEER_ADDRESS=peer0.org4.hiam.hal:15051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:15051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org4.example.com:15052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org4.hiam.hal:15052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:15052
       # Peer used to bootstrap gossip within organisation
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org4.example.com:16051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org4.hiam.hal:16051
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org4.example.com:15051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org4.hiam.hal:15051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -765,15 +765,15 @@ services:
     ports:
       - 15051:15051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org4.hiam.hal/peers/peer0.org4.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org4.hiam.hal/peers/peer0.org4.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org4.example.com:
-    container_name: peer1.org4.example.com
+  peer1.org4.hiam.hal:
+    container_name: peer1.org4.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -784,14 +784,14 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org4.example.com
-      - CORE_PEER_ADDRESS=peer1.org4.example.com:16051
+      - CORE_PEER_ID=peer1.org4.hiam.hal
+      - CORE_PEER_ADDRESS=peer1.org4.hiam.hal:16051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:16051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org4.example.com:16052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org4.hiam.hal:16052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:16052
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org4.example.com:16051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org4.example.com:15051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org4.hiam.hal:16051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org4.hiam.hal:15051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb9:5984
@@ -807,16 +807,16 @@ services:
     ports:
       - 16051:16051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer1.org4.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org4.example.com/peers/peer1.org4.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org4.hiam.hal/peers/peer1.org4.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org4.hiam.hal/peers/peer1.org4.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
 
-  peer0.org5.example.com:
-    container_name: peer0.org5.example.com
+  peer0.org5.hiam.hal:
+    container_name: peer0.org5.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -827,15 +827,15 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer0.org5.example.com
-      - CORE_PEER_ADDRESS=peer0.org5.example.com:17051
+      - CORE_PEER_ID=peer0.org5.hiam.hal
+      - CORE_PEER_ADDRESS=peer0.org5.hiam.hal:17051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:17051
-      - CORE_PEER_CHAINCODEADDRESS=peer0.org5.example.com:17052
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org5.hiam.hal:17052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:17052
       # Peer used to bootstrap gossip within organisation
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org5.example.com:18051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org5.hiam.hal:18051
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org5.example.com:17051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org5.hiam.hal:17051
 
       # - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:9440
 
@@ -854,15 +854,15 @@ services:
     ports:
       - 17051:17051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer0.org5.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org5.hiam.hal/peers/peer0.org5.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org5.hiam.hal/peers/peer0.org5.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
 
-  peer1.org5.example.com:
-    container_name: peer1.org5.example.com
+  peer1.org5.hiam.hal:
+    container_name: peer1.org5.hiam.hal
     extends:
       file: base.yaml
       service: peer-base
@@ -873,14 +873,14 @@ services:
 
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
 
-      - CORE_PEER_ID=peer1.org5.example.com
-      - CORE_PEER_ADDRESS=peer1.org5.example.com:18051
+      - CORE_PEER_ID=peer1.org5.hiam.hal
+      - CORE_PEER_ADDRESS=peer1.org5.hiam.hal:18051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:18051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.org5.example.com:18052
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org5.hiam.hal:18052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:18052
       # Exposed for discovery Service
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org5.example.com:18051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org5.example.com:17051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org5.hiam.hal:18051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org5.hiam.hal:17051
 
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb11:5984
@@ -896,8 +896,8 @@ services:
     ports:
       - 18051:18051
     volumes:
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer1.org5.example.com/msp:/etc/hyperledger/crypto/peer/msp
-      - ./channel/crypto-config/peerOrganizations/org5.example.com/peers/peer1.org5.example.com/tls:/etc/hyperledger/crypto/peer/tls
+      - ./channel/crypto-config/peerOrganizations/org5.hiam.hal/peers/peer1.org5.hiam.hal/msp:/etc/hyperledger/crypto/peer/msp
+      - ./channel/crypto-config/peerOrganizations/org5.hiam.hal/peers/peer1.org5.hiam.hal/tls:/etc/hyperledger/crypto/peer/tls
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
