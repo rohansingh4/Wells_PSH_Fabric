@@ -1,2 +1,1 @@
 Installed chaincodes on peer:
-Package ID: samplejs_1:8a483dd8afa3d270dc6b38fac65d335e6bdf9e3717dbe2ec142cfb3b4bb9eb28, Label: samplejs_1

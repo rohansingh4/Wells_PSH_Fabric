@@ -99,8 +99,8 @@ setGlobalsForPeer1org5(){
 CHANNEL_NAME1="channel1"
 CC_RUNTIME_LANGUAGE="node"
 VERSION="1"
-CC_SRC_PATH="./artifacts/src/github.com/samplejs"
-CC_NAME="samplejs"
+CC_SRC_PATH="./artifacts/src/github.com/assetTransfer"
+CC_NAME="assetTransfer"
 
 
 packageChaincode() {
@@ -397,7 +397,7 @@ queryCommitted2
 queryCommitted3
 queryCommitted4
 queryCommitted5
-chaincodeInvokeInit
+# chaincodeInvokeInit
 # sleep 5
 # chaincodeInvoke
 # sleep 3
