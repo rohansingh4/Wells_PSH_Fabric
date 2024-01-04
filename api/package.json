@@ -1,0 +1,29 @@
+{
+    "name": "asset-transfer-basic",
+    "version": "1.0.0",
+    "description": "Asset-transfer-basic application implemented in JavaScript",
+    "engines": {
+        "node": ">=14.14",
+        "npm": ">=6"
+    },
+    "scripts": {
+        "lint": "eslint *.js",
+        "pretest": "npm run lint"
+    },
+    "engineStrict": true,
+    "author": "Hyperledger",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "express-bearer-token": "^2.4.0",
+        "express-jwt": "^8.4.1",
+        "fabric-ca-client": "^2.2.19",
+        "fabric-network": "^2.2.19",
+        "log4js": "^6.9.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0"
+    }
+}
