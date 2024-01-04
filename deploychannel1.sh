@@ -99,8 +99,8 @@ setGlobalsForPeer1org5(){
 CHANNEL_NAME1="channel1"
 CC_RUNTIME_LANGUAGE="node"
 VERSION="1"
-CC_SRC_PATH="./artifacts/src/github.com/assetTransfer"
-CC_NAME="assetTransfer"
+CC_SRC_PATH="./artifacts/src/github.com/smartContract1"
+CC_NAME="smartContract1"
 
 
 packageChaincode() {
@@ -369,35 +369,38 @@ chaincodeInvoke() {
         --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
         --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
         --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
-        -c '{"function": "Create","Args":[1, "John Doe", true]}'
-        # -c '{"function": "initLedger","Args":[]}'
+        -c '{"function": "InitLedger","Args":[]}'
+
 }
 
+
 # chaincodeInvoke
 
-packageChaincode
-installChaincode
-queryInstalled0
-queryInstalled1
-queryInstalled2
-queryInstalled3
-queryInstalled4
-approveForMyOrg0
-checkCommitReadyness
-approveForMyOrg1
-approveForMyOrg2
-approveForMyOrg3
-approveForMyOrg4
-approveForMyOrg5
-checkCommitReadyness
-commitChaincodeDefination
-queryCommitted0
-queryCommitted1
-queryCommitted2
-queryCommitted3
-queryCommitted4
-queryCommitted5
+# packageChaincode
+# installChaincode
+# queryInstalled0
+# queryInstalled1
+# queryInstalled2
+# queryInstalled3
+# queryInstalled4
+# approveForMyOrg0
+# checkCommitReadyness
+# approveForMyOrg1
+# approveForMyOrg2
+# approveForMyOrg3
+# approveForMyOrg4
+# approveForMyOrg5
+# checkCommitReadyness
+# commitChaincodeDefination
+# queryCommitted0
+# queryCommitted1
+# queryCommitted2
+# queryCommitted3
+# queryCommitted4
+# queryCommitted5
 # chaincodeInvokeInit
 # sleep 5
-# chaincodeInvoke
+chaincodeInvoke
 # sleep 3
+
+#need to check query 1, query all and update
