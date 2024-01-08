@@ -1,0 +1,50 @@
+{
+	"name": "test-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "org0MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"channel1": {
+			"peers": {
+				"peer0.org0.hiam.hal": {}
+			}
+		}
+	},
+  "organizations": {
+		"org0MSP": {
+			"mspid": "org0MSP",
+			"adminPrivateKey": {
+				"path": "/etc/data/peerOrganizations/org0.hiam.hal/users/Admin@org0.hiam.hal/msp/keystore/priv_sk"
+			},
+			"peers": [
+				"peer0.org0.hiam.hal"
+			],
+			"signedCert": {
+				"path": "/etc/data/peerOrganizations/org0.hiam.hal/users/Admin@org0.hiam.hal/msp/signcerts/Admin@org0.hiam.hal-cert.pem"
+			}
+		}
+	},
+  "peers": {
+		"peer0.org0.hiam.hal": {
+			"tlsCACerts": {
+				"path": "/etc/data/peerOrganizations/org0.hiam.hal/peers/peer0.org0.hiam.hal/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.org0.hiam.hal:7051"
+		}
+	}
+}
