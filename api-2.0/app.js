@@ -18,8 +18,8 @@ const port = process.env.PORT || constants.port;
 
 const helper = require('./app/helper')
 const invoke = require('./app/invoke')
-const qscc = require('./app/qscc')
-const query = require('./app/query')
+// const qscc = require('./app/qscc')
+// const query = require('./app/query')
 
 app.options('*', cors());
 app.use(cors());
@@ -192,8 +192,8 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName', async function (req
         var peers = req.body.peers;
         var chaincodeName = req.params.chaincodeName;
         var channelName = req.params.channelName;
-        var fcn = req.body.fcn;
-        var args = req.body.args;
+        var fcn = req.body.function;
+        var args = req.body.Args;
         // var transient = req.body.transient;
         // console.log(`Transient data is ;${transient}`)
         logger.debug('channelName  : ' + channelName);
@@ -216,6 +216,9 @@ app.post('/channels/:channelName/chaincodes/:chaincodeName', async function (req
             res.json(getErrorMessage('\'args\''));
             return;
         }
+
+
+        // return res.json({fcn, args: args[0]})
         let message = await invoke.invokeTransaction(channelName, chaincodeName, fcn, args, req.username, req.orgname);
         console.log(`message result is : ${message}`)
 
