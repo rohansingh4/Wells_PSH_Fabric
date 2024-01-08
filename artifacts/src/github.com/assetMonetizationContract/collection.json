@@ -1,0 +1,14 @@
+[
+    {
+      "name": "testCollection",
+      "policy": "OR('org1MSP.member')",
+      "requiredPeerCount": 1,
+      "maxPeerCount": 1,
+      "blockToLive":1000000,
+      "memberOnlyRead": true,
+      "memberOnlyWrite": true,
+      "endorsementPolicy": {
+        "signaturePolicy": "OR('org1MSP.member')"
+       }
+   }
+]

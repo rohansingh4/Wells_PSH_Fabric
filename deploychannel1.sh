@@ -99,8 +99,8 @@ setGlobalsForPeer1org5(){
 CHANNEL_NAME1="channel1"
 CC_RUNTIME_LANGUAGE="node"
 VERSION="1"
-CC_SRC_PATH="./artifacts/src/github.com/smartContract1"
-CC_NAME="smartContract1"
+CC_SRC_PATH="./artifacts/src/github.com/assetMonetizationContract"
+CC_NAME="agreement"
 
 
 packageChaincode() {
@@ -202,7 +202,7 @@ approveForMyOrg0() {
         --ordererTLSHostnameOverride orderer1.hiam.hal --tls \
         --collections-config $PRIVATE_DATA_CONFIG \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME1 --name ${CC_NAME} --version ${VERSION} \
-        --init-required --package-id ${PACKAGE_ID} \
+        --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
     echo "===================== chaincode approved from org0 ===================== "
 }
@@ -212,7 +212,7 @@ checkCommitReadyness() {
     peer lifecycle chaincode checkcommitreadiness \
         --collections-config $PRIVATE_DATA_CONFIG \
         --channelID $CHANNEL_NAME1 --name ${CC_NAME} --version ${VERSION} \
-        --sequence ${VERSION} --output json --init-required
+        --sequence ${VERSION} --output json 
     echo "===================== checking commit readyness from org0 ===================== "
 }
 
@@ -222,7 +222,7 @@ approveForMyOrg1() {
         --ordererTLSHostnameOverride orderer1.hiam.hal --tls $CORE_PEER_TLS_ENABLED \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME1 --name ${CC_NAME} \
         --collections-config $PRIVATE_DATA_CONFIG \
-        --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
+        --version ${VERSION}  --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
     echo "===================== chaincode approved from org1 ===================== "
@@ -236,7 +236,7 @@ approveForMyOrg2() {
         --ordererTLSHostnameOverride orderer1.hiam.hal --tls $CORE_PEER_TLS_ENABLED \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME1 --name ${CC_NAME} \
         --collections-config $PRIVATE_DATA_CONFIG \
-        --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
+        --version ${VERSION} --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
     echo "===================== chaincode approved from org2 ===================== "
@@ -249,7 +249,7 @@ approveForMyOrg3() {
         --ordererTLSHostnameOverride orderer1.hiam.hal --tls $CORE_PEER_TLS_ENABLED \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME1 --name ${CC_NAME} \
         --collections-config $PRIVATE_DATA_CONFIG \
-        --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
+        --version ${VERSION} --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
     echo "===================== chaincode approved from org3 ===================== "
@@ -261,7 +261,7 @@ approveForMyOrg4() {
         --ordererTLSHostnameOverride orderer1.hiam.hal --tls $CORE_PEER_TLS_ENABLED \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME1 --name ${CC_NAME} \
         --collections-config $PRIVATE_DATA_CONFIG \
-        --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
+        --version ${VERSION} --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
     echo "===================== chaincode approved from org4 ===================== "
@@ -273,7 +273,7 @@ approveForMyOrg5() {
         --ordererTLSHostnameOverride orderer1.hiam.hal --tls $CORE_PEER_TLS_ENABLED \
         --cafile $ORDERER_CA --channelID $CHANNEL_NAME1 --name ${CC_NAME} \
         --collections-config $PRIVATE_DATA_CONFIG \
-        --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
+        --version ${VERSION} --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
     echo "===================== chaincode approved from org5 ===================== "
@@ -284,7 +284,7 @@ checkCommitReadyness() {
     peer lifecycle chaincode checkcommitreadiness --channelID $CHANNEL_NAME1 \
         --peerAddresses localhost:7051 --tlsRootCertFiles $PEER0_ORG0_CA \
         --collections-config $PRIVATE_DATA_CONFIG \
-        --name ${CC_NAME} --version ${VERSION} --sequence ${VERSION} --output json --init-required
+        --name ${CC_NAME} --version ${VERSION} --sequence ${VERSION} --output json 
     echo "===================== checking commit readyness from orgs ===================== "
 }
 
@@ -300,7 +300,7 @@ commitChaincodeDefination() {
         --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
         --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
         --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
-        --version ${VERSION} --sequence ${VERSION} --init-required
+        --version ${VERSION} --sequence ${VERSION} 
 }
 
 queryCommitted0() {
@@ -336,26 +336,6 @@ queryCommitted5() {
 }
 
 
-chaincodeInvokeInit() {
-    setGlobalsForPeer0org0
-    peer chaincode invoke -o localhost:7050 \
-        --ordererTLSHostnameOverride orderer1.hiam.hal \
-        --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA \
-        -C $CHANNEL_NAME1 -n ${CC_NAME} \
-        --peerAddresses localhost:7051 --tlsRootCertFiles $PEER0_ORG0_CA \
-        --peerAddresses localhost:9051 --tlsRootCertFiles $PEER0_ORG1_CA \
-        --peerAddresses localhost:11051 --tlsRootCertFiles $PEER0_ORG2_CA \
-        --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
-        --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
-        --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
-        --isInit -c '{"Args":[]}'
-        # --isInit -c '{"function": "initLedger","Args":[]}'
-        # --isInit -c '{"Args":["Init"]}' 
-        # --isInit -c '{"function": "Create","Args":[1, "John Doe", true]}'
-}
-
-# chaincodeInvokeInit
-
 chaincodeInvoke() {
     setGlobalsForPeer0org0
     peer chaincode invoke -o localhost:7050 \
@@ -369,12 +349,40 @@ chaincodeInvoke() {
         --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
         --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
         --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
-        -c '{"function": "InitLedger","Args":[]}'
-
+        -c '{"function": "CreateContract","Args":["{\"prj_id\":\"project99\",\"prj_company\":\"Systaldyn\",\"prj_company_details\":\"Blockchain\",\"prj_description\":\"System Analysis Dynamic\",\"prj_sba_id\":\"SBA139\",\"prj_sba_address\":\"Noida\",\"prj_sba_landmark\":\"63 Metro Station\",\"prj_sba_lat\":36.123456,\"prj_sba_long\":-109.123177,\"prj_sba_details\":\"Details Sys\",\"prj_sba_media_list\":[\"<url=url of uploaded photo>,<type=photo>,<file-hash>\"],\"prj_status\":1,\"asset_services_list\":[\"<PRJ0001A0002>\",\"<PRJ0001A0003>\",\"<PRJ0001A0004>\",\"<PRJ0001S0001>\"],\"prj_nft_id\":\"ERC 3525 NFT ID\",\"prj_valuation\":1230000,\"prj_last_update_dttime\":\"last_update from BC\",\"prj_lastupdate_user\":\"user-id that last updated data\"}"]}'
 }
 
 
-# chaincodeInvoke
+chaincodeQueryGetAssetByID() {
+    setGlobalsForPeer0org0
+    peer chaincode query -C $CHANNEL_NAME1 -n ${CC_NAME} -c '{"function": "getAssetByID","Args":["project100"]}'
+}
+
+
+
+chaincodeQueryGetAllAssets() {
+    setGlobalsForPeer0org0
+    peer chaincode query -C $CHANNEL_NAME1 -n ${CC_NAME} -c '{"function": "getAllAssets","Args":[]}'
+}
+
+
+chaincodeInvokeUpdateAsset() {
+    setGlobalsForPeer0org0
+    peer chaincode invoke -o localhost:7050 \
+        --ordererTLSHostnameOverride orderer1.hiam.hal \
+        --tls $CORE_PEER_TLS_ENABLED \
+        --cafile $ORDERER_CA \
+        -C $CHANNEL_NAME1 -n ${CC_NAME} \
+        --peerAddresses localhost:7051 --tlsRootCertFiles $PEER0_ORG0_CA \
+        --peerAddresses localhost:9051 --tlsRootCertFiles $PEER0_ORG1_CA \
+        --peerAddresses localhost:11051 --tlsRootCertFiles $PEER0_ORG2_CA \
+        --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
+        --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
+        --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
+         -c '{"function": "updateAsset","Args":["project143", "{\"asset_services_list\":[\"<PRJ0001A0005>\",\"<PRJ0001A0003>\",\"<PRJ0001A0004>\",\"<PRJ0001S0001>\"],\"prj_company\":\"UpdatedCompanyXYZ\",\"prj_company_details\":\"UpdatedDetailsXYZ\",\"prj_description\":\"UpdatedDescriptionXYZ\",\"prj_last_update_dttime\":\"new_last_update from BC\",\"prj_lastupdate_user\":\"new_user-id that last updated data\",\"prj_nft_id\":\"UpdatedERC3525NFTID\",\"prj_sba_address\":\"NewAddressXYZ\",\"prj_sba_details\":\"NewSBADetails\",\"prj_sba_id\":\"UpdatedSBA456\",\"prj_sba_landmark\":\"NewLandmarkXYZ\",\"prj_sba_lat\":40.987654,\"prj_sba_long\":-110.987654,\"prj_sba_media_list\":[\"<url=new-url of uploaded photo>,<type=new-photo>,<file-hash=new-file-hash>\"],\"prj_status\":2,\"prj_valuation\":1500000}"]}'
+        # -c '{"function": "updateAsset","Args":["project99", "{\"prj_sba_address\":\"Delhi\"}"]}'
+}
+chaincodeInvokeUpdateAsset
 
 # packageChaincode
 # installChaincode
@@ -398,9 +406,10 @@ chaincodeInvoke() {
 # queryCommitted3
 # queryCommitted4
 # queryCommitted5
-# chaincodeInvokeInit
-# sleep 5
-chaincodeInvoke
+# chaincodeInvoke
 # sleep 3
-
-#need to check query 1, query all and update
+# chaincodeQueryGetAssetByID
+# sleep 3
+# chaincodeQueryGetAllAssets
+# sleep 3
+# chaincodeInvokeUpdateAsset
