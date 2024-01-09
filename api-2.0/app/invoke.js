@@ -7,9 +7,8 @@ const util = require('util')
 
 const helper = require('./helper')
 
-const invokeTransaction = async (channelName, chaincodeName, fcn, args, username, org_name) => {
+const invokeTransaction = async (channelName, chaincodeName, fcn, args, username, org_name, transientData) => {
     try {
-        
         logger.debug(util.format('\n============ invoke transaction on channel %s ============\n', channelName));
 
         // load the network configuration
@@ -52,25 +51,21 @@ const invokeTransaction = async (channelName, chaincodeName, fcn, args, username
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork(channelName);
 
-        console.log("get contract above")
         const contract = network.getContract(chaincodeName);
-        console.log("get contract down", contract)
 
         let result
-        let message
-        console.log("before transaction down")
-        
-        // if (fcn === "CreateContract") {
-            result = await contract.submitTransaction(fcn, JSON.stringify(args));
-            // JSON.stringify(args)
-            message = `Successfully added batteroackeolrequest data ${args[0]}`
-            console.log("after transaction down")
-        // }
-        // else {
-        //     return `Invocation require either createCar or changeCarOwner as function but got ${fcn}`
-        // }
+        let message;
+        if (fcn === "CreateContract") {
+            result = await contract.submitTransaction(fcn, args);
+            message = `Successfully added data `
+        }
+        else {
+            return `Invocation require either createCar or changeCarOwner as function but got ${fcn}`
+        }
 
         await gateway.disconnect();
+
+        // result = JSON.parse(result.toString());
 
         let response = {
             message: message,

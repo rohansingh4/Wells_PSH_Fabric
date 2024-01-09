@@ -33,7 +33,7 @@ Organizations:
                 Rule: "OR('org0MSP.peer')"
         AnchorPeers:
             - Host: peer0.org0.hiam.hal
-              Port: 17051
+              Port: 7051
     
     - &org1
         Name: org1MSP
@@ -54,7 +54,7 @@ Organizations:
                 Rule: "OR('org1MSP.peer')"
         AnchorPeers:
             - Host: peer0.org1.hiam.hal
-              Port: 7051
+              Port: 9051
 
     - &org2
         Name: org2MSP
@@ -75,7 +75,7 @@ Organizations:
                 Rule: "OR('org2MSP.peer')"    
         AnchorPeers:
             - Host: peer0.org2.hiam.hal
-              Port: 9051
+              Port: 11051
 
     - &org3
         Name: org3MSP
@@ -96,7 +96,7 @@ Organizations:
                 Rule: "OR('org3MSP.peer')"
         AnchorPeers:
             - Host: peer0.org3.hiam.hal
-              Port: 11051
+              Port: 13051
 
     - &org4
         Name: org4MSP
@@ -117,7 +117,7 @@ Organizations:
                 Rule: "OR('org4MSP.peer')"
         AnchorPeers:
             - Host: peer0.org4.hiam.hal
-              Port: 13051
+              Port: 15051
 
     - &org5
         Name: org5MSP
@@ -138,7 +138,7 @@ Organizations:
                 Rule: "OR('org5MSP.peer')"
         AnchorPeers:
             - Host: peer0.org5.hiam.hal
-              Port: 15051
+              Port: 17051
 
 Capabilities:
     Channel: &ChannelCapabilities

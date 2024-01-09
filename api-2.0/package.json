@@ -16,7 +16,7 @@
       "express": "^4.17.1",
       "express-bearer-token": "^2.4.0",
       "express-jwt": "^5.3.0",
-      "fabric-ca-client": "^2.2.19",
+      "fabric-ca-client": "^2.1.0",
       "fabric-client": "^1.4.8",
       "fabric-common": "2.2.3",
       "fabric-network": "^2.2.20",
@@ -29,4 +29,3 @@
       "save": "^2.4.0"
     }
   }
-

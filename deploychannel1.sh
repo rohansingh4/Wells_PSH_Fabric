@@ -349,13 +349,13 @@ chaincodeInvoke() {
         --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
         --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
         --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
-        -c '{"function": "CreateContract","Args":["{\"prj_id\":\"project11\",\"prj_company\":\"Systaldyn\",\"prj_company_details\":\"Blockchain\",\"prj_description\":\"System Analysis Dynamic\",\"prj_sba_id\":\"SBA139\",\"prj_sba_address\":\"Noida\",\"prj_sba_landmark\":\"63 Metro Station\",\"prj_sba_lat\":36.123456,\"prj_sba_long\":-109.123177,\"prj_sba_details\":\"Details Sys\",\"prj_sba_media_list\":[\"<url=url of uploaded photo>,<type=photo>,<file-hash>\"],\"prj_status\":1,\"asset_services_list\":[\"<PRJ0001A0002>\",\"<PRJ0001A0003>\",\"<PRJ0001A0004>\",\"<PRJ0001S0001>\"],\"prj_nft_id\":\"ERC 3525 NFT ID\",\"prj_valuation\":1230000,\"prj_last_update_dttime\":\"last_update from BC\",\"prj_lastupdate_user\":\"user-id that last updated data\"}"]}'
+        -c '{"function": "CreateContract","Args":["{\"prj_id\":\"project10\",\"prj_company\":\"Systaldyn\",\"prj_company_details\":\"Blockchain\",\"prj_description\":\"System Analysis Dynamic\",\"prj_sba_id\":\"SBA139\",\"prj_sba_address\":\"Noida\",\"prj_sba_landmark\":\"63 Metro Station\",\"prj_sba_lat\":36.123456,\"prj_sba_long\":-109.123177,\"prj_sba_details\":\"Details Sys\",\"prj_sba_media_list\":[\"<url=url of uploaded photo>,<type=photo>,<file-hash>\"],\"prj_status\":1,\"asset_services_list\":[\"<PRJ0001A0002>\",\"<PRJ0001A0003>\",\"<PRJ0001A0004>\",\"<PRJ0001S0001>\"],\"prj_nft_id\":\"ERC 3525 NFT ID\",\"prj_valuation\":1230000,\"prj_last_update_dttime\":\"last_update from BC\",\"prj_lastupdate_user\":\"user-id that last updated data\"}"]}'
 }
 
 
 chaincodeQueryGetAssetByID() {
     setGlobalsForPeer0org0
-    peer chaincode query -C $CHANNEL_NAME1 -n ${CC_NAME} -c '{"function": "getAssetByID","Args":["project100"]}'
+    peer chaincode query -C $CHANNEL_NAME1 -n ${CC_NAME} -c '{"function": "getAssetByID","Args":["project11"]}'
 }
 
 
@@ -379,7 +379,7 @@ chaincodeInvokeUpdateAsset() {
         --peerAddresses localhost:13051 --tlsRootCertFiles $PEER0_ORG3_CA \
         --peerAddresses localhost:15051 --tlsRootCertFiles $PEER0_ORG4_CA \
         --peerAddresses localhost:17051 --tlsRootCertFiles $PEER0_ORG5_CA \
-         -c '{"function": "updateAsset","Args":["project143", "{\"asset_services_list\":[\"<PRJ0001A0005>\",\"<PRJ0001A0003>\",\"<PRJ0001A0004>\",\"<PRJ0001S0001>\"],\"prj_company\":\"UpdatedCompanyXYZ\",\"prj_company_details\":\"UpdatedDetailsXYZ\",\"prj_description\":\"UpdatedDescriptionXYZ\",\"prj_last_update_dttime\":\"new_last_update from BC\",\"prj_lastupdate_user\":\"new_user-id that last updated data\",\"prj_nft_id\":\"UpdatedERC3525NFTID\",\"prj_sba_address\":\"NewAddressXYZ\",\"prj_sba_details\":\"NewSBADetails\",\"prj_sba_id\":\"UpdatedSBA456\",\"prj_sba_landmark\":\"NewLandmarkXYZ\",\"prj_sba_lat\":40.987654,\"prj_sba_long\":-110.987654,\"prj_sba_media_list\":[\"<url=new-url of uploaded photo>,<type=new-photo>,<file-hash=new-file-hash>\"],\"prj_status\":2,\"prj_valuation\":1500000}"]}'
+         -c '{"function": "updateAsset","Args":["project11", "{\"asset_services_list\":[\"<PRJ0001A0005>\",\"<PRJ0001A0003>\",\"<PRJ0001A0004>\",\"<PRJ0001S0001>\"],\"prj_company\":\"Systaldyn\",\"prj_company_details\":\"UpdatedDetailsXYZ\",\"prj_description\":\"UpdatedDescriptionXYZ\",\"prj_last_update_dttime\":\"new_last_update from BC\",\"prj_lastupdate_user\":\"new_user-id that last updated data\",\"prj_nft_id\":\"UpdatedERC3525NFTID\",\"prj_sba_address\":\"NewAddressXYZ\",\"prj_sba_details\":\"NewSBADetails\",\"prj_sba_id\":\"UpdatedSBA456\",\"prj_sba_landmark\":\"NewLandmarkXYZ\",\"prj_sba_lat\":40.987654,\"prj_sba_long\":-110.987654,\"prj_sba_media_list\":[\"<url=new-url of uploaded photo>,<type=new-photo>,<file-hash=new-file-hash>\"],\"prj_status\":2,\"prj_valuation\":1500000}"]}'
         # -c '{"function": "updateAsset","Args":["project99", "{\"prj_sba_address\":\"Delhi\"}"]}'
 }
 # chaincodeInvokeUpdateAsset
@@ -406,10 +406,10 @@ chaincodeInvokeUpdateAsset() {
 # queryCommitted3
 # queryCommitted4
 # queryCommitted5
-chaincodeInvoke
+# chaincodeInvoke
 # sleep 3
 # chaincodeQueryGetAssetByID
 # sleep 3
 # chaincodeQueryGetAllAssets
 # sleep 3
-# chaincodeInvokeUpdateAsset
+chaincodeInvokeUpdateAsset
